@@ -5,7 +5,7 @@ class BooksController < ApplicationController
       format.html
       format.text
       format.csv { render :plain => Book.generate_csv(@books), content_type: 'text/plain' }
-      # format.json { render json: @resource }
+      format.json { render json: @books }
     end
   end
 
