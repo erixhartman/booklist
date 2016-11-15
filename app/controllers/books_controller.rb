@@ -4,6 +4,7 @@ class BooksController < ApplicationController
     respond_to do |format|
       format.html
       format.text
+      format.csv { render :plain => Book.generate_csv(@books), content_type: 'text/plain' }
       # format.json { render json: @resource }
     end
   end
